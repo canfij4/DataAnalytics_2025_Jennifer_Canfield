@@ -63,6 +63,14 @@ lines(x,.12*q)
 q <- dnorm(x,mean=48, sd=5, log=FALSE)
 #lines(x,q)
 lines(x, .3*q)
+plot(ecdf(ECO.new), do.points=FALSE, verticals=TRUE)
+#Quantile-Quantile? 
+qqnorm(ECO.new); qqline(ECO.new)
+#Make a Q-Q plot against the generating distribution by: 
+qqplot(rnorm(250), ECO.new, xlab = "Q-Q plot for norm dsn") 
+qqline(ECO.new)
+qqplot(rt(250, df = 5), ECO.new, xlab = "Q-Q plot for t dsn") 
+qqline(ECO.new)
 
 #Exercise 2a: Second Variable - PAR.new
 PAR.new
@@ -92,3 +100,11 @@ q <- dnorm(x,mean=67, sd=5, log=FALSE)
 lines(x, .08*q)
 q <- dnorm(x,mean=97, sd=5, log=FALSE)
 lines(x, .03*q)
+plot(ecdf(PAR.new), do.points=FALSE, verticals=TRUE)
+#Quantile-Quantile? 
+qqnorm(PAR.new); qqline(PAR.new)
+#Make a Q-Q plot against the generating distribution by: 
+qqplot(rnorm(250), PAR.new, xlab = "Q-Q plot for norm dsn") 
+qqline(PAR.new)
+qqplot(rt(250, df = 5), PAR.new, xlab = "Q-Q plot for t dsn") 
+qqline(PAR.new)
